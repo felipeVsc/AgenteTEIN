@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Notificações</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    </head>
+   
+    <body>
+
+        <div class="notificacoesPg">
+            <nav class="navbar navbar-expand-md navCor navbar-dark">
+                <a class="navbar-brand" href="">Notificações</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button> 
+  		    </nav>
+            <div class="container">
+                <div>
+                    <br><button type="button" class="btn btn-block" id="buttonPadrao"><img src="plus.png">Nova notificação</button>
+                </div>
+                <div style="padding: 10px; text-align: center; color: rgb(182, 181, 181);">
+                    <p >Visualização de alertas da população</p>
+                    <hr>
+                </div>
+
+                <div class="">
+                    <!--- card1-->
+                    <div class="cards" id="cardValidar">
+                        <p style="float: right; padding-top: 5px;">Visualizar dados do usuário</p>
+                        <br>
+                        <img src="user.png">
+                        <h7>Usuário</h7>
+                        <div class="form-group">
+                            <textarea class="form-control" id="mensagem" rows="3" placeholder="Mensagem"></textarea>
+                        </div>
+                        <div class="row pdBt">
+                            <button class="btn btn-danger col">
+                                <strong>Não validar</strong>
+                            </button>
+                            
+                            <button class="btn btn-info col">
+                                <strong>Validar</strong>
+                            </button>
+                        </div>                    
+                    </div>
+                    <!--- card2-->
+                    <br>
+                    <div class="cards">
+                        <p style="float: right;">Visualizar dados do usuário</p>
+                        <br>
+                        <img src="user.png">
+                        <h7>Usuário</h7>
+                        <div class="form-group">
+                            <textarea class="form-control" id="mensagem" rows="3" placeholder="Mensagem"></textarea>
+                        </div>
+                        <div class="row pdBt">
+                            <button class="btn btn-danger col">
+                                <strong>Não validar</strong>
+                            </button>
+                            
+                            <button class="btn btn-info col">
+                                <strong>Validar</strong>
+                            </button>
+                        </div> 
+                    </div>                
+                </div>
+                <!--- oq deveria ser um pop up-->
+                <br>
+                <div class="cards">
+                    <p style="float: left;">Validar alerta</p>
+                    <br>
+                    <div class="form-group">
+                        <select class="form-control form-control-sm">
+                            <option>Grupo</option>
+                        </select>
+                                                        
+                        <button type="submit" class="btn btn-info btn-block">
+                            <strong>Notificar</strong>
+                        </button>
+                    </div> 
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
