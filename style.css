@@ -3,6 +3,16 @@
     background-color: #327E8C;
 }
 
+.padraoMain{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background-color: #327E8C;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
 .notificacoesPg{
     background-color: rgb(233, 233, 233);
 }
@@ -39,18 +49,124 @@
 }
 
 .painel{
+    background-color:#1C9CAE;
+    width: 100vw;
+    display: flex;
+    align-items: center;
     position: absolute;
     bottom: 0%;
-    background-color: rgb(77, 175, 192);
-    width: 100vw;
-    float: left;
+}
+
+.itemPainel{
+    display: flex;
+    flex: 0 0 25%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imgPainel{
+    flex: 0 0 20px;
+    width: 70%;
+    height: 70%;
+}
+
+.imgLogo{
+    width: 100%;
+    height: 100%;
 }
 
 figcaption{
-    float: right;
-    width: 30%;
     text-align: center;
-    font-size: smaller;
-    margin: 0.5em;
-    padding: 0.5em;
+    margin: 0px;
+    padding-bottom: 0.25em;
+    color: white;
+    font-weight: bold;
+    font-size: 1em;
 }
+.botaoModal{
+    width: 45px;
+    height: 45px;
+    padding: 1px;
+}
+
+.fundomodal{
+    background: #5FCDDE;
+    border-radius: 5px;
+    
+}
+
+.divBg{
+    background: white;
+    width: 25%;
+    height: 25%;
+}
+
+.btDentro{
+    width: 15%;
+    height: 15%;
+    padding: 10px;
+}
+
+.ads{
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    border-top-width: 0px;
+
+}
+
+.p{
+    margin-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.meio{
+    margin-right: 0px;
+    margin-left: 16%;
+}
+
+.esquerda{
+    margin-left: 19%;
+}
+
+.mesmo-tamanho {
+    width: 90px;
+    white-space: normal;
+}
+
+.primeiro{
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.borda{
+    border-radius: 10px;
+    -webkit-box-shadow: 0 8px 6px -6px black;
+    -moz-box-shadow: 0 8px 6px -6px black;
+    box-shadow: 0 5px 1px -0.1px  	#2C7D8C;
+}
+
+hr { 
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+  } 
+
+
+body {
+    width:100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    
+}
+html {
+    height: 100%;
+}
+
