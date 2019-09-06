@@ -1,0 +1,27 @@
+.telasiniciais{
+    text-align: center;
+    background-color: #327E8C;
+}
+#button{
+    background-color: #5CD6D2;
+}
+.asd{
+    color: white;
+}
+.navCor{
+    background-color: #4BBBD1;
+} 
+
+.cards{
+    border-radius: 10px;
+    background-color: white;
+    padding: 12px;
+}
+
+.pdBt{
+    padding: 13px;
+    
+}
+.texto{
+    text-align: left;
+}
