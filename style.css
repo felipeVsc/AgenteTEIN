@@ -48,6 +48,10 @@
     padding: 13px;
 }
 
+.mgBt{
+    margin-left: 13px;
+}
+
 .painel{
     background-color:#1C9CAE;
     width: 100vw;
