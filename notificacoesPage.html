@@ -44,8 +44,8 @@
                                 <strong>Não validar</strong>
                             </button>
                             
-                            <button class="btn btn-info col">
-                                <strong>Validar</strong>
+                            <button type="button" class="btn btn-info col" data-toggle="modal" data-target="#modalValidacao">
+                                    <strong>Validar</strong>
                             </button>
                         </div>                    
                     </div>
@@ -64,27 +64,49 @@
                                 <strong>Não validar</strong>
                             </button>
                             
-                            <button class="btn btn-info col">
-                                <strong>Validar</strong>
+                            <button type="button" class="btn btn-info col" data-toggle="modal" data-target="#modalValidacao">
+                                    <strong>Validar</strong>
                             </button>
+                            
                         </div> 
                     </div>                
                 </div>
                 <!--- oq deveria ser um pop up-->
+                <!-- modal pra validacao -->
+
+                <div class="modal fade" id="modalValidacao" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                          <div class="modal-content">
+                            
+                            <div class="modal-body">
+                                <div class="cards">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                                                <span aria-hidden="true">&times;</span>
+                                              </button>
+                                        <p style="float: left;">Validar alerta</p>
+                                        <br>
+                                        <div class="form-group">
+                                            <select class="form-control form-control-sm">
+                                                <option>Grupo</option>
+                                            </select>
+                                                                            
+                                            <button type="submit" style="margin-top: 10%;" class="btn btn-info btn-block" data-dismiss="modal">
+                                            
+                                                <strong>Notificar</strong>
+                                            </button>
+                                        </div> 
+                                    </div>
+                            </div>
+                            
+                          </div>
+                        </div>
+                      </div>
+
+
+
+                <!-- fim do modal -->
                 <br>
-                <div class="cards">
-                    <p style="float: left;">Validar alerta</p>
-                    <br>
-                    <div class="form-group">
-                        <select class="form-control form-control-sm">
-                            <option>Grupo</option>
-                        </select>
-                                                        
-                        <button type="submit" class="btn btn-info btn-block">
-                            <strong>Notificar</strong>
-                        </button>
-                    </div> 
-                </div>
+                
             </div>
         </div>
 
