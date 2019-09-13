@@ -10,6 +10,78 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     </head>
     <body>
-        
+        <nav class="navbar navbar-expand-md navCor navbar-dark">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand navbarTextLeft" href="#">Cadastro Saúde</a>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar"></div>  
+        </nav>
+        <br>
+        <div class="container">
+            <form>
+                <div class="form-group">
+                    <input type="number" class="form-control bg-light" placeholder="N°">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control bg-light" placeholder="Doença cardíaca">
+                </div>
+                <div class="form-group">
+                    <input type="number" class="form-control bg-light" placeholder="Peso">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control bg-light" placeholder="Doença respiratória">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control bg-light" placeholder="Problema nos rins">
+                </div>
+
+                <div class="row" style="padding-left: 5%; padding-right: 13px;">
+                    <div class="form-check col">
+                        <input class="form-check-input" type="checkbox" value="">
+                        <label class="form-check-label" for="defaultCheck1">Fumante</label>
+                    </div>
+                    <div class="form-check col">
+                        <input class="form-check-input" type="checkbox" value="">
+                        <label class="form-check-label" for="defaultCheck2">Mudança</label> 
+                    </div>
+                </div>
+                <div class="row" style="padding-left: 5%; padding-right: 13px;">
+                    <div class="form-check col">
+                        <input class="form-check-input" type="checkbox" value="">
+                        <label class="form-check-label" for="defaultCheck1">Usa álcool</label>
+                    </div>
+                    <div class="form-check col">
+                        <input class="form-check-input" type="checkbox" value="">
+                        <label class="form-check-label" for="defaultCheck2">Diabetes</label> 
+                    </div>
+                </div>
+                <div class="row" style="padding-left: 5%; padding-right: 13px;">
+                    <div class="form-check col">
+                        <input class="form-check-input" type="checkbox" value="">
+                        <label class="form-check-label" for="defaultCheck1">Drogas</label>
+                    </div>
+                    <div class="form-check col">
+                        <input class="form-check-input" type="checkbox" value="">
+                        <label class="form-check-label" for="defaultCheck2">AVC/Derrame</label> 
+                    </div>
+                </div>
+                <div class="row" style="padding-left: 5%; padding-right: 13px;">
+                    <div class="form-check col">
+                        <input class="form-check-input" type="checkbox" value="">
+                        <label class="form-check-label" for="defaultCheck1">Hipertenso</label>
+                    </div>
+                    <div class="form-check col">
+                        <input class="form-check-input" type="checkbox" value="">
+                        <label class="form-check-label" for="defaultCheck2">Câncer</label> 
+                    </div>
+                </div>
+
+                <div class="row pdBt">
+                    <button type="submit" class="btn btn-info navCor col"><strong>Anterior</strong></button> </br>
+                    <button type="submit" class="btn btn-info navCor col mgBt"><strong>Próximo</strong></button> </br>
+                </div>
+            </form>
+        </div>
     </body>
 </html>
