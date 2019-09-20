@@ -179,3 +179,18 @@ html {
     margin-left: 1rem;
     margin-right: 0;
 }
+
+.icon{
+    padding: 0;
+    margin-top: 0;
+}
+
+.etapa{
+    font-size: 14pt;
+    color: grey;
+    margin-top: -10px;
+}
+
+.imgEtapa{
+    margin-top: -20px;
+}
