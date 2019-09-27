@@ -12,19 +12,22 @@
         <script src="script.js"></script> 
   	</head>
   	<body>
-          <div>
-            <nav class="navbar navbar-expand-md navCor navbar-dark">                
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                    <span class="navbar-toggler-icon"></span>
-                </button> 
-                <a class="navbar-brand navbarTextLeft" href="">Mapa</a>
-            </nav>
+      <nav class="navbar navbar-expand-md navCor navbar-dark link">
+        <div id="mySidenav" class="sidenav">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <a href="#">Início</a>
+          <a href="#">idk</a>
         </div>
-   
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon" style="cursor:pointer" onclick="openNav()"></span>
+        </button>
+        <a class="navbar-brand navbarTextLeft" href="">Mapa</a>
+      </nav>
+    
 		<div class="container">
 			<div style="position: absolute;bottom: 0;margin-bottom: 5%;margin-left: 80%;">
-                <button type="button" class="btn btn-primary botaoModal" data-toggle="modal" style="margin-top: 100%;float: right;margin-right: 2%; " data-target="#modalExemplo">
-                        <img src="iconMaps.png" width="100%" height="100%">
+                <button type="button" class="btn botaoModal" data-toggle="modal" style="margin-top: 100%;float: right;margin-right: 2%; background-color: #4BBBD1;" data-target="#modalExemplo">
+                        <img src="icons/iconMap.png" width="100%" height="100%">
                 </button>
             </div> 
 
@@ -39,20 +42,20 @@
                                     <div class="row align-items-center">
                                       <div class="col-sm btDentro primeiro">
                                             <button type="button" class="btn btn-light mesmo-tamanho borda" id="testebotao" data-toggle="modal" data-target="#test2" data-dismiss="modal" data-dismiss="modal" onclick="mudarTexto('Dengue')">
-                                                    <img src="iconMaps.png" width="100%%" height="100%%">
+                                                    <img src="icons/iconMaps.png" width="100%%" height="100%%">
                                                     <p class="p">Dengue</p>
                                                 </button>
                                     
                                       </div>
                                       <div class="col-sm btDentro meio">
                                             <button type="button" class="btn btn-light borda mesmo-tamanho " data-toggle="modal" data-target="#test2" data-dismiss="modal" onclick="mudarTexto('Esgoto')">
-                                                    <img src="iconMaps.png" width="100%%" height="100%%">
+                                                    <img src="icons/iconMaps.png" width="100%%" height="100%%">
                                                     <p class="p">Esgoto</p>
                                                 </button>
                                       </div>
                                       <div class="col-sm btDentro esquerda">
                                             <button type="button" class="btn btn-light borda mesmo-tamanho " data-toggle="modal" data-target="#test2" data-dismiss="modal" onclick="mudarTexto('Parasitas')">
-                                                    <img src="iconMaps.png" width="100%" height="100%">
+                                                    <img src="icons/iconMaps.png" width="100%" height="100%">
                                                     <p class="p">Parasitas</p>
                                                 </button>
                                       </div>
@@ -61,20 +64,20 @@
                                     <div class="row align-items-center">
                                             <div class="col-sm btDentro primeiro">
                                                   <button type="button" class="btn btn-light borda mesmo-tamanho" data-toggle="modal" data-target="#test2" data-dismiss="modal" onclick="mudarTexto('Lixo')">
-                                                          <img src="iconMaps.png" width="100%%" height="100%%">
+                                                          <img src="icons/iconMaps.png" width="100%%" height="100%%">
                                                           <p class="p">Lixo</p>
                                                       </button>
                                           
                                             </div>
                                             <div class="col-sm btDentro meio">
                                                   <button type="button" class="btn btn-light borda mesmo-tamanho  " data-toggle="modal" data-target="#test2" data-dismiss="modal" onclick="mudarTexto('Floresta')">
-                                                          <img src="iconMaps.png" width="100%%" height="100%%">
+                                                          <img src="icons/iconMaps.png" width="100%%" height="100%%">
                                                           <p class="p">Floresta</p>
                                                       </button>
                                             </div>
                                             <div class="col-sm btDentro esquerda">
                                                   <button type="button" class="btn btn-light borda  mesmo-tamanho " data-toggle="modal" data-target="#test2" data-dismiss="modal" onclick="mudarTexto('Animais')">
-                                                          <img src="iconMaps.png" width="100%" height="100%">
+                                                          <img src="icons/iconMaps.png" width="100%" height="100%">
                                                           <p class="p">Animais</p>
                                                       </button>
                                             </div>
@@ -83,20 +86,20 @@
                                           <div class="row align-items-center">
                                                 <div class="col-sm btDentro primeiro">
                                                       <button type="button" class="btn btn-light borda mesmo-tamanho" data-toggle="modal" data-target="#test2" data-dismiss="modal" onclick="mudarTexto('D. Mental')">
-                                                              <img src="iconMaps.png" width="100%%" height="100%%">
+                                                              <img src="icons/iconMaps.png" width="100%%" height="100%%">
                                                               <p class="p" style="font-size: 15px;">D. Mental</p>
                                                           </button>
                                               
                                                 </div>
                                                 <div class="col-sm btDentro meio">
                                                       <button type="button" class="btn btn-light borda mesmo-tamanho  " data-toggle="modal" data-target="#test2" data-dismiss="modal" onclick="mudarTexto('Hipertenso')">
-                                                              <img src="iconMaps.png" width="100%%" height="100%%">
+                                                              <img src="icons/iconMaps.png" width="100%%" height="100%%">
                                                               <p class="p">Hipertenso</p>
                                                           </button>
                                                 </div>
                                                 <div class="col-sm btDentro esquerda">
                                                       <button type="button" class="btn btn-light borda mesmo-tamanho " data-toggle="modal" data-target="#test2" data-dismiss="modal" onclick="mudarTexto('Diabéticos')">
-                                                              <img src="iconMaps.png" width="100%" height="100%">
+                                                              <img src="icons/iconMaps.png" width="100%" height="100%">
                                                               <p class="p">Diabéticos</p>
                                                           </button>
                                                 </div>
@@ -105,20 +108,20 @@
                                               <div class="row align-items-center">
                                                     <div class="col-sm btDentro primeiro">
                                                           <button type="button" class="btn btn-light borda mesmo-tamanho" data-toggle="modal" data-target="#test2" data-dismiss="modal" onclick="mudarTexto('Fumantes')">
-                                                                  <img src="iconMaps.png" width="100%%" height="100%%">
+                                                                  <img src="icons/iconMaps.png" width="100%%" height="100%%">
                                                                   <p class="p">Fumantes</p>
                                                               </button>
                                                   
                                                     </div>
                                                     <div class="col-sm btDentro meio">
                                                           <button type="button" class="btn btn-light borda  mesmo-tamanho  " data-toggle="modal" data-target="#test2" data-dismiss="modal" onclick="mudarTexto('Drogas')">
-                                                                  <img src="iconMaps.png" width="100%%" height="100%%">
+                                                                  <img src="icons/iconMaps.png" width="100%%" height="100%%">
                                                                   <p class="p">Drogas</p>
                                                               </button>
                                                     </div>
                                                     <div class="col-sm btDentro esquerda">
                                                           <button type="button" class="btn btn-light borda mesmo-tamanho " data-toggle="modal" data-target="#test2" data-dismiss="modal" onclick="mudarTexto('Alcoolismo')">
-                                                                  <img src="iconMaps.png" width="100%" height="100%">
+                                                                  <img src="icons/iconMaps.png" width="100%" height="100%">
                                                                   <p class="p">Alcoolismo</p>
                                                               </button>
                                                     </div>
@@ -144,7 +147,7 @@
 
                                                     <div class="row align-items-center">
                                                             <div class="col-3" style="padding-right: 0px;padding-left: 5px;">
-                                                                <img src="iconMaps.png" width="75%" height="75%">
+                                                                <img src="icons/iconMaps.png" width="75%" height="75%">
                                                                 <label for="recipient-name" id="textoModel" class="control-label">Dengue</label>
                                                             </div>
                                                             <div class="col" style="padding-left: 0px;padding-right: 0px;">
