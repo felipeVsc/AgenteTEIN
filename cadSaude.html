@@ -5,18 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     </head>
     <body>
-        <nav class="navbar navbar-expand-md navCor navbar-dark">
+        <nav class="navbar navbar-expand-md navCor navbar-dark link">
+            <div id="mySidenav" class="sidenav">
+              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+              <a href="Main.html">Início</a>
+              <a href="#">idk</a>
+            </div>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon" style="cursor:pointer" onclick="openNav()"></span>
             </button>
-            <a class="navbar-brand navbarTextLeft" href="#">Cadastro Saúde</a>
-            <div class="collapse navbar-collapse" id="collapsibleNavbar"></div>  
-        </nav>
+            <a class="navbar-brand navbarTextLeft" href="">Cadastro Saúde</a>
+          </nav>
         <br>
         <div class="container">
             <div>
@@ -84,8 +89,8 @@
                 </div>
 
                 <div class="row pdBt">
-                    <button type="submit" class="btn btn-info navCor col"><strong>Anterior</strong></button> </br>
-                    <button type="submit" class="btn btn-info navCor col mgBt"><strong>Próximo</strong></button> </br>
+                    <a href="cadInd.html" class="btn btn-info navCor col"><strong>Anterior</strong></a> </br>
+                    <a href="cadCid.html" class="btn btn-info navCor col mgBt"><strong>Próximo</strong></a> </br>
                 </div>
             </form>
         </div>
