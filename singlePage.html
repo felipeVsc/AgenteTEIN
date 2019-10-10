@@ -2,7 +2,7 @@
 
 <html lang="en">
     <head>
-        <title>Cadastro Individual</title>
+        <title>Agente</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -90,7 +90,7 @@
                         <input class="form-check-input" type="checkbox" value="">
                         <label class="form-check-label" for="defaultCheck2">Possui referência familiar</label> 
                     </div>
-                    <button type="submit" class="btn btn-info btn-block navCor"><strong>Finalizar</strong></button> 
+                    <button type="submit" class="btn btn-info btn-block navCor" onclick="nextPage('cadCid', 'main')"><strong>Finalizar</strong></button> 
                 </form>
             </div>
         </div>
@@ -163,8 +163,8 @@
                         </div>
               
                         <div class="row pdBt">
-                            <a href="cadMoradia.html" class="btn btn-info navCor col"><strong>Anterior</strong></a> </br>
-                            <a href="cadSaude.html" class="btn btn-info navCor col mgBt"><strong>Próximo</strong></a> </br>
+                            <a class="btn btn-info navCor col" onclick="nextPage('cadInd', 'cadMoradia')" ><strong>Anterior</strong></a> </br>
+                            <a class="btn btn-info navCor col mgBt" onclick="nextPage('cadInd', 'cadSaude')" ><strong>Próximo</strong></a> </br>
                         </div>
                     </div>         
                 </form>
@@ -175,7 +175,7 @@
             <nav class="navbar navbar-expand-md navCor navbar-dark link">
                 <div id="mySidenav" class="sidenav">
                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                    <a href="Main.html">Início</a>
+                    <a href="#">Início</a>
                     <a href="#">idk</a>
                 </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -217,7 +217,7 @@
                         <input type="text" class="form-control bg-light" placeholder="N° SUS Responsável">
                     </div>
                     <div>
-                        <a href="cadInd.html" class="btn btn-info btn-block navCor"><strong>Próximo</strong></button></a> </br>
+                        <a class="btn btn-info btn-block navCor" onclick="nextPage('cadMoradia', 'cadInd')"><strong>Próximo</strong></button></a> </br>
                     </div>
                 </form>     
             </div>
@@ -302,34 +302,34 @@
                     </div>
 
                     <div class="row pdBt">
-                        <a href="cadInd.html" class="btn btn-info navCor col"><strong>Anterior</strong></a> </br>
-                        <a href="cadCid.html" class="btn btn-info navCor col mgBt"><strong>Próximo</strong></a> </br>
+                        <a class="btn btn-info navCor col" onclick="nextPage('cadSaude', 'cadInd')" ><strong>Anterior</strong></a> </br>
+                        <a class="btn btn-info navCor col mgBt" onclick="nextPage('cadSaude', 'cadCid')" ><strong>Próximo</strong></a> </br>
                     </div>
                 </form>
             </div>
         </div>
 
         <div id="login" class="padrao">
-            <img src="icons/logo.png" width="100%" height="100%">
+            <img src="icons/logo.png" width="100%" height="50%">
 
             <div class="container">        
-                <form action="/action_page.php">
+                <form>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text icon"><img src="icons/iconUser.png" style="width: 36px;"></span>
                         </div>
                         <input type="email" class="form-control" placeholder="Email" id="usr" name="email">
                     </div>
-                    <form action="/action_page.php">
+                    <form>
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text icon"><img src="icons/iconPass.png" style="width: 36px;"></span>
                             </div>
                             <input type="password" class="form-control" placeholder="Senha" id="senha" name="senha">
                         </div>
-                        <button type="submit" class="btn btn-block" id="buttonPadrao"><strong>Entrar</strong></button></br>
+                        <button type="submit" class="btn btn-block" id="buttonPadrao" onclick="nextPage('login', 'main')"><strong>Entrar</strong></button></br>
                     </form> 
-                    <a onclick="nextPage('login', 'recSenha')" class="link">Esqueci a senha</a>
+                    <a onclick="nextPage('login', 'recSenha')" class="link" href="#recSenha">Esqueci a senha</a>
                 </form>
             </div>
         </div>
@@ -340,29 +340,23 @@
                 <div class="dropdown-menu dropstyle" aria-labelledby="dropdownMenuImg">
                     <a class="dropdown-item" style="color: white;" href="#">Visualizar plano de ação</a>
                     <a class="dropdown-item"  style="color: white;" href="#">Visualizar acomp. do plano</a>
-                    <a class="dropdown-item"  style="color: white;" href="#">Sair</a>
+                    <a class="dropdown-item"  style="color: white;" onclick="nextPage('main', 'login')">Sair</a>
                 </div>
             </div>
             <img class="imgLogo" src="icons/logo.png">
                 
             <div class="painel"> 
-                <div class="itemPainel">
-                    <a href="modals.html">
-                        <img class="imgPainel" src="icons/iconMaps.png">
-                        <figcaption>Mapa</figcaption>
-                    </a>
+                <div class="itemPainel" onclick="nextPage('main', 'map')">
+                    <img class="imgPainel" src="icons/iconMaps.png">
+                    <figcaption>Mapa</figcaption>
                 </div>
-                <div class="itemPainel">
-                    <a href="cadMoradia.html">
-                        <img class="imgPainel" src="icons/iconHouse.png">
-                        <figcaption>Visita</figcaption>
-                    </a>
+                <div class="itemPainel" onclick="nextPage('main', 'cadMoradia')"> 
+                    <img class="imgPainel" src="icons/iconHouse.png">
+                    <figcaption>Visita</figcaption>                    
                 </div>
-                <div class="itemPainel">
-                    <a href="notificacoesPage.html">
-                        <img class="imgPainel" src="icons/iconMega.png">
-                        <figcaption>Notificações</figcaption>
-                    </a>
+                <div class="itemPainel" onclick="nextPage('main', 'notif')">
+                    <img class="imgPainel" src="icons/iconMega.png">
+                    <figcaption>Notificações</figcaption>
                 </div>
                 <div class="itemPainel">
                     <img class="imgPainel" src="icons/iconQuadro.png">
@@ -375,7 +369,7 @@
             <nav class="navbar navbar-expand-md navCor navbar-dark link">
                 <div id="mySidenav" class="sidenav">
                     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                    <a href="Main.html">Início</a>
+                    <a href="">Início</a>
                     <a href="#">idk</a>
                 </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -561,12 +555,12 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                         <span class="navbar-toggler-icon" style="cursor:pointer" onclick="openNav()"></span>
                     </button>
-                    <a class="navbar-brand navbarTextLeft" href="">Notificações</a>
+                    <a class="navbar-brand navbarTextLeft" onclick="nextPage('notif', 'main')">Notificações</a>
                 </nav>
                 <div class="container">
                     <div>
                         <br>
-                        <button type="button" class="btn btn-block" id="buttonPadrao">
+                        <button type="button" class="btn btn-block" id="buttonPadrao" onclick="nextPage('notif', 'newNotif')" >
                         <img src="icons/plus.png">Nova notificação</button>
                     </div>
                     <div style="padding: 10px; text-align: center; color: rgb(182, 181, 181);">
@@ -677,7 +671,7 @@
             <img src="icons/logo.png" class="imgLogo">
             <div class="container">
                 <h5 class="link">Recuperar senha</h5>
-                <form action="/action_page.php">
+                <form>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text icon">
@@ -688,7 +682,7 @@
                     <button type="submit" class="btn btn-block" id="buttonPadrao"><strong>Recuperar</strong></button>
                     </br>
                 </form>
-                <a onclick="nextPage('recSenha', 'login')" class="link">Voltar ao login</a>
+                <a onclick="nextPage('recSenha', 'login')" class="link" href="#login">Voltar ao login</a>
             </div>
         </div>
     </body>
