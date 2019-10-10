@@ -1,83 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Cadastro Individual</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-</head>
-<body>
 
-  <nav class="navbar navbar-expand-md navCor navbar-dark link">
-    <div id="mySidenav" class="sidenav">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <a href="Main.html">Início</a>
-      <a href="#">idk</a>
-    </div>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-        <span class="navbar-toggler-icon" style="cursor:pointer" onclick="openNav()"></span>
-    </button>
-    <a class="navbar-brand navbarTextLeft" href="">Cadastro Individual</a>
-  </nav>
-<br>
-<div class="container">
-    <div>
+<html lang="en">
+  <head>
+    <title>Cadastro Individual</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-md navCor navbar-dark link">
+      <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="Main.html">Início</a>
+        <a href="#">idk</a>
+      </div>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon" style="cursor:pointer" onclick="openNav()"></span>
+      </button>
+      <a class="navbar-brand navbarTextLeft" href="">Cadastro Individual</a>
+    </nav>
+    <br>
+    <div class="container">
+      <div>
         <img src="icons/barra2.png" class="imgEtapa" width="100%">
         <p class="etapa">
           Etapa 2 de 4
         </p>
       </div>
-    <form>
+      <form>
         <div class="input-group mb-3">
           <div class="input-group-prepend">
-          </div>
-          <input type="number" class="form-control bg-light" placeholder="Nº SUS">
-        </div>
-        <div class="form-group">
-            <input type="text" class="form-control bg-light" placeholder="Parentesco">
-          </div>
-          <div class="form-group">
-            <input type="text" class="form-control bg-light" placeholder="Escolaridade">
-          </div>
-          <div class="form-group">
-            <input type="text" class="form-control bg-light" placeholder="Gênero">
-          </div>
-          <div class="form-group">
-            <input type="text" class="form-control bg-light" placeholder="Deficiência">
-          </div>
-          <div class="form-group">
-            <input type="text" class="form-control bg-light" placeholder="Criança fica com...">
-          </div>
-          <div class="row" style="padding-left: 13px; padding-right: 13px;">
-            <div class="form-check col">
-              <input class="form-check-input" type="checkbox" value="">
-              <label class="form-check-label" for="defaultCheck1">
-              Plano de saúde
-              </label>
+            <div>
+              <input type="number" class="form-control bg-light" placeholder="Nº SUS">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control bg-light" placeholder="Parentesco">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control bg-light" placeholder="Escolaridade">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control bg-light" placeholder="Gênero">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control bg-light" placeholder="Deficiência">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control bg-light" placeholder="Criança fica com...">
+            </div>
+            <div class="row" style="padding-left: 13px; padding-right: 13px;">
+              <div class="form-check col">
+                <input class="form-check-input" type="checkbox" value="">
+                <label class="form-check-label" for="defaultCheck1">
+                Plano de saúde
+                </label>
+              </div>
             </div>
             <div class="form-check col">
               <input class="form-check-input" type="checkbox" value="">
               <label class="form-check-label" for="defaultCheck2">
-              Mudança
+                Mudança
               </label>
             </div>
-        </div>
-        <div class="row" style="padding-left: 13px; padding-right: 13px;">
+          </div>
+
+          <div class="row" style="padding-left: 13px; padding-right: 13px;">
             <div class="form-check col">
               <input class="form-check-input" type="checkbox" value="">
               <label class="form-check-label" for="defaultCheck3">
-              Óbito
+                Óbito
               </label>
             </div>
-        </div>
-        <div class="row pdBt">
-          <a href="cadMoradia.html" class="btn btn-info navCor col"><strong>Anterior</strong></a> </br>
-          <a href="cadSaude.html" class="btn btn-info navCor col mgBt"><strong>Próximo</strong></a> </br>
-        </div>          
-    </form>
-</div>
+          </div>
+
+          <div class="row pdBt">
+            <a href="cadMoradia.html" class="btn btn-info navCor col"><strong>Anterior</strong></a> </br>
+            <a href="cadSaude.html" class="btn btn-info navCor col mgBt"><strong>Próximo</strong></a> </br>
+          </div>
+        </div>         
+      </form>
+    </div>
+  </body>
+</html>

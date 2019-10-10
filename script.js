@@ -66,3 +66,8 @@ function writeNewPost(uid, username, picture, title, body) {
 
   return firebase.database().ref().update(updates);
 }
+
+function nextPage(idActualDiv, idNextDiv) {
+  document.getElementById(idActualDiv).classList.add('hidden')
+  document.getElementById(idNextDiv).classList.remove('hidden')
+}

@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>Cadastro Individual</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    </head>
+
+    <body>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-app.js"></script>
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+
+        <script>
+            // Your web app's Firebase configuration
+            var firebaseConfig = {
+                apiKey: "AIzaSyB2_RDWk68PRh8Y58MJ0CbN8BkuPNTh1JU",
+                authDomain: "agentetein.firebaseapp.com",
+                databaseURL: "https://agentetein.firebaseio.com",
+                projectId: "agentetein",
+                storageBucket: "agentetein.appspot.com",
+                messagingSenderId: "166401056761",
+                appId: "1:166401056761:web:fd693f486b88eb13eda728"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+        </script>
+        <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+        <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+        <script src="/__/firebase/6.2.0/firebase-app.js"></script>
+
+        <!-- Add Firebase products that you want to use -->
+        <script src="/__/firebase/6.2.0/firebase-auth.js"></script>
+        <script src="/__/firebase/6.2.0/firebase-firestore.js"></script>
+
+        <!-- Initialize Firebase -->
+        <script src="/__/firebase/init.js"></script>
+
+        <div id="cadCid" class="hidden">
+            <nav class="navbar navbar-expand-md navCor navbar-dark link">
+                <div id="mySidenav" class="sidenav">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <a href="Main.html">Início</a>
+                    <a href="#">idk</a>
+                </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon" style="cursor:pointer" onclick="openNav()"></span>
+                </button>
+                <a class="navbar-brand navbarTextLeft" href="">Cidadão de Rua</a>
+            </nav>
+            <br>
+            <div class="container">
+                <div>
+                    <img src="icons/barra4.png" class="imgEtapa" width="100%">
+                    <p class="etapa">
+                        Etapa 4 de 4
+                    </p>
+                </div>
+                <form>
+                    <div class="form-group">
+                        <input type="number" class="form-control bg-light" placeholder="N° SUS">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control bg-light" placeholder="Tempo na rua">
+                    </div>
+                    <div class="form-group">
+                        <input type="number" class="form-control bg-light" placeholder="Alimenta ao dia">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control bg-light" placeholder="Origem alimentação">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control bg-light" placeholder="Higiene pessoal">
+                    </div>                
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="">
+                        <label class="form-check-label" for="defaultCheck1">Recebe benefício</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="">
+                        <label class="form-check-label" for="defaultCheck2">Possui referência familiar</label> 
+                    </div>
+                    <button type="submit" class="btn btn-info btn-block navCor"><strong>Finalizar</strong></button> 
+                </form>
+            </div>
+        </div>
+
+        <div id="cadInd" class="hidden">
+            <nav class="navbar navbar-expand-md navCor navbar-dark link">
+                <div id="mySidenav" class="sidenav">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <a href="Main.html">Início</a>
+                    <a href="#">idk</a>
+                </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon" style="cursor:pointer" onclick="openNav()"></span>
+                </button>
+                <a class="navbar-brand navbarTextLeft" href="">Cadastro Individual</a>
+            </nav>
+            <br>
+            <div class="container">
+                <div>
+                    <img src="icons/barra2.png" class="imgEtapa" width="100%">
+                    <p class="etapa">
+                        Etapa 2 de 4
+                    </p>
+                </div>
+
+                <form>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <div>
+                                <input type="number" class="form-control bg-light" placeholder="Nº SUS">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control bg-light" placeholder="Parentesco">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control bg-light" placeholder="Escolaridade">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control bg-light" placeholder="Gênero">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control bg-light" placeholder="Deficiência">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control bg-light" placeholder="Criança fica com...">
+                        </div>
+                        <div class="row" style="padding-left: 13px; padding-right: 13px;">
+                            <div class="form-check col">
+                            <input class="form-check-input" type="checkbox" value="">
+                            <label class="form-check-label" for="defaultCheck1">
+                            Plano de saúde
+                            </label>
+                            </div>
+                        </div>
+                        <div class="form-check col">
+                            <input class="form-check-input" type="checkbox" value="">
+                            <label class="form-check-label" for="defaultCheck2">
+                                Mudança
+                            </label>
+                        </div>
+                    
+                        <div class="row" style="padding-left: 13px; padding-right: 13px;">
+                            <div class="form-check col">
+                                <input class="form-check-input" type="checkbox" value="">
+                                <label class="form-check-label" for="defaultCheck3">
+                                    Óbito
+                                </label>
+                            </div>
+                        </div>
+              
+                        <div class="row pdBt">
+                            <a href="cadMoradia.html" class="btn btn-info navCor col"><strong>Anterior</strong></a> </br>
+                            <a href="cadSaude.html" class="btn btn-info navCor col mgBt"><strong>Próximo</strong></a> </br>
+                        </div>
+                    </div>         
+                </form>
+            </div>
+        </div>
+
+        <div id="cadMoradia" class="hidden">
+            <nav class="navbar navbar-expand-md navCor navbar-dark link">
+                <div id="mySidenav" class="sidenav">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <a href="Main.html">Início</a>
+                    <a href="#">idk</a>
+                </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon" style="cursor:pointer" onclick="openNav()"></span>
+                </button>
+                <a class="navbar-brand navbarTextLeft" href="">Cadastro Moradia</a>
+            </nav>
+            <br>
+            <div class="container">
+                <div>
+                    <img src="icons/barra.png" class="imgEtapa" width="100%">
+                    <p class="etapa">
+                        Etapa 1 de 4
+                    </p>
+                </div>
+                <form>
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <input type="number" class="form-control bg-light" placeholder="CEP"> </br>
+                            <input type="number" class="form-control bg-light mgBt" placeholder="Número">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control bg-light" placeholder="Rua">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control bg-light" placeholder="Abastecimento d'água">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control bg-light" placeholder="Animais">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control bg-light" placeholder="Esgoto">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control bg-light" placeholder="Lixo">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control bg-light" placeholder="N° SUS Responsável">
+                    </div>
+                    <div>
+                        <a href="cadInd.html" class="btn btn-info btn-block navCor"><strong>Próximo</strong></button></a> </br>
+                    </div>
+                </form>     
+            </div>
+        </div>
+
+        <div id="cadSaude" class="hidden">
+            <nav class="navbar navbar-expand-md navCor navbar-dark link">
+                <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="Main.html">Início</a>
+                <a href="#">idk</a>
+                </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon" style="cursor:pointer" onclick="openNav()"></span>
+                </button>
+                <a class="navbar-brand navbarTextLeft" href="">Cadastro Saúde</a>
+            </nav>
+            <br>
+            <div class="container">
+                <div>
+                    <img src="icons/barra3.png" class="imgEtapa" width="100%">
+                    <p class="etapa">
+                        Etapa 3 de 4
+                    </p>
+                </div>
+                <form>
+                    <div class="form-group">
+                        <input type="number" class="form-control bg-light" placeholder="N°">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control bg-light" placeholder="Doença cardíaca">
+                    </div>
+                    <div class="form-group">
+                        <input type="number" class="form-control bg-light" placeholder="Peso">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control bg-light" placeholder="Doença respiratória">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control bg-light" placeholder="Problema nos rins">
+                    </div>
+
+                    <div class="row" style="padding-left: 5%; padding-right: 13px;">
+                        <div class="form-check col">
+                            <input class="form-check-input" type="checkbox" value="">
+                            <label class="form-check-label" for="defaultCheck1">Fumante</label>
+                        </div>
+                        <div class="form-check col">
+                            <input class="form-check-input" type="checkbox" value="">
+                            <label class="form-check-label" for="defaultCheck2">Mudança</label> 
+                        </div>
+                    </div>
+                    <div class="row" style="padding-left: 5%; padding-right: 13px;">
+                        <div class="form-check col">
+                            <input class="form-check-input" type="checkbox" value="">
+                            <label class="form-check-label" for="defaultCheck1">Usa álcool</label>
+                        </div>
+                        <div class="form-check col">
+                            <input class="form-check-input" type="checkbox" value="">
+                            <label class="form-check-label" for="defaultCheck2">Diabetes</label> 
+                        </div>
+                    </div>
+                    <div class="row" style="padding-left: 5%; padding-right: 13px;">
+                        <div class="form-check col">
+                            <input class="form-check-input" type="checkbox" value="">
+                            <label class="form-check-label" for="defaultCheck1">Drogas</label>
+                        </div>
+                        <div class="form-check col">
+                            <input class="form-check-input" type="checkbox" value="">
+                            <label class="form-check-label" for="defaultCheck2">AVC/Derrame</label> 
+                        </div>
+                    </div>
+                    <div class="row" style="padding-left: 5%; padding-right: 13px;">
+                        <div class="form-check col">
+                            <input class="form-check-input" type="checkbox" value="">
+                            <label class="form-check-label" for="defaultCheck1">Hipertenso</label>
+                        </div>
+                        <div class="form-check col">
+                            <input class="form-check-input" type="checkbox" value="">
+                            <label class="form-check-label" for="defaultCheck2">Câncer</label> 
+                        </div>
+                    </div>
+
+                    <div class="row pdBt">
+                        <a href="cadInd.html" class="btn btn-info navCor col"><strong>Anterior</strong></a> </br>
+                        <a href="cadCid.html" class="btn btn-info navCor col mgBt"><strong>Próximo</strong></a> </br>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="login" class="padrao">
+            <img src="icons/logo.png" width="100%" height="100%">
+
+            <div class="container">        
+                <form action="/action_page.php">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text icon"><img src="icons/iconUser.png" style="width: 36px;"></span>
+                        </div>
+                        <input type="email" class="form-control" placeholder="Email" id="usr" name="email">
+                    </div>
+                    <form action="/action_page.php">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text icon"><img src="icons/iconPass.png" style="width: 36px;"></span>
+                            </div>
+                            <input type="password" class="form-control" placeholder="Senha" id="senha" name="senha">
+                        </div>
+                        <button type="submit" class="btn btn-block" id="buttonPadrao"><strong>Entrar</strong></button></br>
+                    </form> 
+                    <a onclick="nextPage('login', 'recSenha')" class="link">Esqueci a senha</a>
+                </form>
+            </div>
+        </div>
+
+        <div id="main" class="padraoMain hidden">
+            <div class="dropdown" id="menudots">
+                <img src="icons/menudots.png" class="dropdown-toggle" id="dropdownMenuImg" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div class="dropdown-menu dropstyle" aria-labelledby="dropdownMenuImg">
+                    <a class="dropdown-item" style="color: white;" href="#">Visualizar plano de ação</a>
+                    <a class="dropdown-item"  style="color: white;" href="#">Visualizar acomp. do plano</a>
+                    <a class="dropdown-item"  style="color: white;" href="#">Sair</a>
+                </div>
+            </div>
+            <img class="imgLogo" src="icons/logo.png">
+                
+            <div class="painel"> 
+                <div class="itemPainel">
+                    <a href="modals.html">
+                        <img class="imgPainel" src="icons/iconMaps.png">
+                        <figcaption>Mapa</figcaption>
+                    </a>
+                </div>
+                <div class="itemPainel">
+                    <a href="cadMoradia.html">
+                        <img class="imgPainel" src="icons/iconHouse.png">
+                        <figcaption>Visita</figcaption>
+                    </a>
+                </div>
+                <div class="itemPainel">
+                    <a href="notificacoesPage.html">
+                        <img class="imgPainel" src="icons/iconMega.png">
+                        <figcaption>Notificações</figcaption>
+                    </a>
+                </div>
+                <div class="itemPainel">
+                    <img class="imgPainel" src="icons/iconQuadro.png">
+                    <figcaption>Painel</figcaption>
+                </div>
+            </div>
+        </div>
+
+        <div id="map" class="hidden">
+            <nav class="navbar navbar-expand-md navCor navbar-dark link">
+                <div id="mySidenav" class="sidenav">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <a href="Main.html">Início</a>
+                    <a href="#">idk</a>
+                </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon" style="cursor:pointer" onclick="openNav()"></span>
+                </button>
+                <a class="navbar-brand navbarTextLeft" href="">Mapa</a>
+            </nav>
+                    
+            <div class="container">
+                <div style="position: absolute;bottom: 0;margin-bottom: 5%;margin-left: 80%;">
+                    <button type="button" class="btn botaoModal" data-toggle="modal" style="margin-top: 100%;float: right;margin-right: 2%; background-color: #4BBBD1;" data-target="#modalExemplo">
+                            <img src="icons/iconMap.png" width="100%" height="100%">
+                    </button>
+                </div> 
+    
+                <!-- Modal -->
+                <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-body fundomodal">
+                                <div class="container">
+                                    <div class="row align-items-center">
+                                        <div class="col-sm btDentro primeiro">
+                                            <button type="button" class="btn btn-light mesmo-tamanho borda" id="testebotao" data-toggle="modal" data-target="#test2" data-dismiss="modal" data-dismiss="modal" onclick="mudarTexto('Dengue');mudarImagem('dengue');">
+                                                <img src="icons/dengue.png" width="100%%" height="100%%">
+                                                <p class="p">Dengue</p>
+                                            </button>
+                                        </div>
+                                        <div class="col-sm btDentro meio">
+                                            <button type="button" class="btn btn-light borda mesmo-tamanho " data-toggle="modal" data-target="#test2" data-dismiss="modal" onclick="mudarTexto('Esgoto');mudarImagem('esgoto');">
+                                                <img src="icons/esgoto.png" width="100%%" height="100%%">
+                                                <p class="p">Esgoto</p>
+                                            </button>
+                                        </div>
+                                        <div class="col-sm btDentro esquerda">
+                                            <button type="button" class="btn btn-light borda mesmo-tamanho " data-toggle="modal" data-target="#test2" data-dismiss="modal" onclick="mudarTexto('Parasitas');mudarImagem('parasitas');">
+                                                <img src="icons/parasitas.png" width="100%" height="100%">
+                                                <p class="p">Parasitas</p>
+                                            </button>
+                                        </div>
+                                    </div>
+    
+                                    <div class="row align-items-center">
+                                        <div class="col-sm btDentro primeiro">
+                                            <button type="button" class="btn btn-light borda mesmo-tamanho" data-toggle="modal" data-target="#test2" data-dismiss="modal" onclick="mudarTexto('Lixo');mudarImagem('lixo');">
+                                                <img src="icons/lixo.png" width="100%%" height="100%%">
+                                                <p class="p">Lixo</p>
+                                            </button>
+                                        </div>
+                                        <div class="col-sm btDentro meio">
+                                            <button type="button" class="btn btn-light borda mesmo-tamanho  " data-toggle="modal" data-target="#test2" data-dismiss="modal" onclick="mudarTexto('Floresta');mudarImagem('floresta');">
+                                                <img src="icons/floresta.png" width="100%%" height="100%%">
+                                                <p class="p">Floresta</p>
+                                            </button>
+                                        </div>
+                                        <div class="col-sm btDentro esquerda">
+                                            <button type="button" class="btn btn-light borda  mesmo-tamanho " data-toggle="modal" data-target="#test2" data-dismiss="modal" onclick="mudarTexto('Animais');mudarImagem('animais');">
+                                                <img src="icons/animais.png" width="100%" height="100%">
+                                                <p class="p">Animais</p>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="row align-items-center">
+                                        <div class="col-sm btDentro primeiro">
+                                            <button type="button" class="btn btn-light borda mesmo-tamanho" data-toggle="modal" data-target="#test2" data-dismiss="modal" onclick="mudarTexto('D. Mental');mudarImagem('dMental');">
+                                                <img src="icons/dMental.png" width="100%%" height="100%%">
+                                                <p class="p" style="font-size: 15px;">D.Mental</p>
+                                            </button>      
+                                        </div>
+
+                                        <div class="col-sm btDentro meio">
+                                            <button type="button" class="btn btn-light borda mesmo-tamanho  " data-toggle="modal" data-target="#test2" data-dismiss="modal" onclick="mudarTexto('Hipertenso');mudarImagem('hiper');">
+                                                <img src="icons/hiper.png" width="100%%" height="100%%">
+                                                <p class="p" style="margin-left: -10px">Hipertensos</p>
+                                            </button>
+                                        </div>
+
+                                        <div class="col-sm btDentro esquerda">
+                                            <button type="button" class="btn btn-light borda mesmo-tamanho " data-toggle="modal" data-target="#test2" data-dismiss="modal" onclick="mudarTexto('Diabéticos');mudarImagem('diab');">
+                                                <img src="icons/diab.png" width="100%" height="100%">
+                                                <p class="p" style="margin-left: -5px">Diabéticos</p>
+                                            </button>
+                                        </div>
+                                    </div>
+    
+                                    <div class="row align-items-center">
+                                        <div class="col-sm btDentro primeiro">
+                                            <button type="button" class="btn btn-light borda mesmo-tamanho" data-toggle="modal" data-target="#test2" data-dismiss="modal" onclick="mudarTexto('Fumantes');mudarImagem('fuma');">
+                                                <img src="icons/fuma.png" width="100%%" height="100%%">
+                                                <p class="p">Fumantes</p>
+                                            </button>             
+                                        </div>
+                                        <div class="col-sm btDentro meio">
+                                            <button type="button" class="btn btn-light borda  mesmo-tamanho  " data-toggle="modal" data-target="#test2" data-dismiss="modal" onclick="mudarTexto('Drogas');mudarImagem('drogas');">
+                                                <img src="icons/drogas.png" width="100%%" height="100%%">
+                                                <p class="p">Drogas</p>
+                                            </button>
+                                        </div>
+                                        <div class="col-sm btDentro esquerda">
+                                            <button type="button" class="btn btn-light borda mesmo-tamanho " data-toggle="modal" data-target="#test2" data-dismiss="modal" onclick="mudarTexto('Alcoolismo');mudarImagem('alcool');">
+                                                <img src="icons/alcool.png" width="100%" height="100%">
+                                                <p class="p" style="margin-left: -7px">Alcoolismo</p>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+                <!-- Modais Pequenos Novos -->
+                <div id="test2" class="modal fade" role="dialog" style="z-index: 1600;">
+                    <div class="modal-dialog">
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <form>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <br>
+                                    <div class="form-group">
+                                        <div class="row align-items-center">
+                                            <div class="col-3" style="padding-right: 0px;padding-left: 5px;">
+                                                <img id="imgIcone" src="icons/iconMaps.png" width="75%" height="75%" >
+                                                <label for="recipient-name" id="textoModel" class="control-label">Dengue</label>
+                                            </div>
+                                            <div class="col" style="padding-left: 0px;padding-right: 0px;">
+                                                <div>
+                                                    <div class="row justify-content-center" style="margin-left: 00px;margin-right: 0px; padding-right: 10px;">
+                                                        <div class="col" style="padding-left: 0px;padding-right: 0px;">
+                                                            <input type="text" class="form-control" placeholder="CEP" style="padding-left: 0px;padding-right: 0px;" id="recipient-name">
+                                                        </div>
+                                                        <div class="col" style="padding-left: 5px;padding-right: 0px;">
+                                                                <input type="text" class="form-control" placeholder="Numero" style="padding-left: 5px;padding-right: 0px;padding-top: 0px;padding-bottom: 0px;" id="recipient-name">
+                                                        </div>
+                                                        <div class="w-100"></div>
+                                                        <div class="col" style="padding-left: 0px;padding-right: 0px;padding-top: 5px;">
+                                                            <input type="text" class="form-control" placeholder="Rua" style="padding-left: 0px;padding-right: 0px;padding-top: 0px;padding-bottom: 0px;" id="recipient-name">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="message-text" class="control-label">Intensidade</label>
+                                        <br>
+                                        <div class="btn-group btn-group-toggle" style="margin-right: 15px;" data-toggle="buttons">
+                                            
+                                            <label class="btn btn-secondary" style="padding-left: 25px;padding-right: 25px;margin-right: 15px;">
+                                                <input type="radio" name="options" id="option1" autocomplete="off" checked> Baixa
+                                            </label>
+                                            <label class="btn btn-secondary" style="margin-right: 15px;">
+                                                <input type="radio" name="options" id="option2" autocomplete="off"> Moderada
+                                            </label>
+                                            <label class="btn btn-secondary" style="padding-left: 25px;padding-right: 25px;">
+                                                <input type="radio" name="options" id="option3" autocomplete="off"> Alta
+                                            </label>
+                                            </div>
+                                    </div>
+                                    <textarea class="form-control" placeholder="Observações" id="message-text"></textarea>
+                                    <button type="submit" class="btn btn-info" style="margin-left: 15px;margin-right: 15px;margin-bottom: 15px;">Salvar</button>   
+                                </form>
+                            </div>      
+                        </div>
+                    </div>
+                </div>
+            </div>            
+        </div>
+
+        <div id="notif" class="notificacoesPg hidden">
+            <div class="notificacoesPg">
+                <nav class="navbar navbar-expand-md navCor navbar-dark link">
+                    <div id="mySidenav" class="sidenav">
+                        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                        <a href="Main.html">Início</a>
+                        <a href="#">idk</a>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                        <span class="navbar-toggler-icon" style="cursor:pointer" onclick="openNav()"></span>
+                    </button>
+                    <a class="navbar-brand navbarTextLeft" href="">Notificações</a>
+                </nav>
+                <div class="container">
+                    <div>
+                        <br>
+                        <button type="button" class="btn btn-block" id="buttonPadrao">
+                        <img src="icons/plus.png">Nova notificação</button>
+                    </div>
+                    <div style="padding: 10px; text-align: center; color: rgb(182, 181, 181);">
+                        <p>Visualização de alertas da população</p>
+                        <hr>
+                    </div>
+    
+                    <div>
+                        <!--- card1-->
+                        <div class="cards" id="cardValidar">
+                            <p style="float: right; padding-top: 5px;">Visualizar dados do usuário</p>
+                            <br>
+                            <img src="icons/user.png">
+                            <h7>Usuário</h7>
+                            <div class="form-group">
+                                <textarea class="form-control" id="mensagem" rows="3" placeholder="Mensagem"></textarea>
+                            </div>
+                            <div class="row pdBt">
+                                <button class="btn btn-danger col">
+                                    <strong>Não validar</strong>
+                                </button>
+                                
+                                <button type="button" class="btn btn-info col" data-toggle="modal" data-target="#modalValidacao">
+                                        <strong>Validar</strong>
+                                </button>
+                            </div>                    
+                        </div>
+                        <!--- card2-->
+                        <br>
+                        <div class="cards">
+                            <p style="float: right;">Visualizar dados do usuário</p>
+                            <br>
+                            <img src="icons/user.png">
+                            <h7>Usuário</h7>
+                            <div class="form-group">
+                                <textarea class="form-control" id="mensagem" rows="3" placeholder="Mensagem"></textarea>
+                            </div>
+                            <div class="row pdBt">
+                                <button class="btn btn-danger col">
+                                    <strong>Não validar</strong>
+                                </button>
+                                <button type="button" class="btn btn-info col" data-toggle="modal" data-target="#modalValidacao">
+                                        <strong>Validar</strong>
+                                </button>
+                            </div> 
+                        </div>                
+                    </div>
+                    <!--- oq deveria ser um pop up-->
+                    <!-- modal pra validacao -->
+                    <div class="modal fade" id="modalValidacao" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <div class="cards">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                                            <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        <p style="float: left;">Validar alerta</p>
+                                        <br>
+                                        <div class="form-group">
+                                            <select class="form-control form-control-sm">
+                                                <option>Grupo</option>
+                                            </select>                           
+                                            <button type="submit" style="margin-top: 10%;" class="btn btn-info btn-block" data-dismiss="modal">
+                                                <strong>Notificar</strong>
+                                            </button>
+                                        </div> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- fim do modal -->
+                    <br>    
+                </div>
+            </div>
+        </div>
+
+        <div id="newNotif" class="hidden">
+            <nav class="navbar navbar-expand-md navCor navbar-dark link">
+                <div id="mySidenav" class="sidenav">
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                    <a href="Main.html">Início</a>
+                    <a href="#">idk</a>
+                </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon" style="cursor:pointer" onclick="openNav()"></span>
+                </button>
+                <a class="navbar-brand navbarTextLeft" href="">Nova Notificação</a>
+            </nav>
+            </br>
+            <div class="container">
+                <form>
+                    <div class="form-group">
+                        <select class="form-control form-control-sm">
+                            <option>Grupo</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" id="mensagem" rows="3" placeholder="Digite sua mensagem aqui"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-block" id="buttonPadrao"><strong>Notificar</strong></button>
+                </form>
+            </div>
+        </div>
+
+        <div id="recSenha" class="padrao hidden">
+            <img src="icons/logo.png" class="imgLogo">
+            <div class="container">
+                <h5 class="link">Recuperar senha</h5>
+                <form action="/action_page.php">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text icon">
+                            <img src="icons/iconUser.png" style="width: 36px;"></span>
+                        </div>
+                        <input type="email" class="form-control" placeholder="Email" id="usr" name="email">
+                    </div>
+                    <button type="submit" class="btn btn-block" id="buttonPadrao"><strong>Recuperar</strong></button>
+                    </br>
+                </form>
+                <a onclick="nextPage('recSenha', 'login')" class="link">Voltar ao login</a>
+            </div>
+        </div>
+    </body>
+</html>
