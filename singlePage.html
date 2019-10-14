@@ -7,29 +7,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="style.css">
-        <script src="script.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/6.5.0/firebase.js"></script>
     </head>
 
     <body>
-       
-        <!-- The core Firebase JS SDK is always required and must be listed first -->
-        <script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-app.js"></script>
-
-        <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-        <script src="/__/firebase/6.2.0/firebase-app.js"></script>
-
-        <!-- Add Firebase products that you want to use -->
-        <script src="/__/firebase/6.2.0/firebase-auth.js"></script>
-        <script src="/__/firebase/6.2.0/firebase-firestore.js"></script>    
-        
-        <!-- Initialize Firebase -->
-        <script src="/__/firebase/init.js"></script>
-
         <div id="cadCid" class="hidden">
             <nav class="navbar navbar-expand-md navCor navbar-dark link">
                 <div id="mySidenav" class="sidenav">
@@ -52,29 +36,29 @@
                 </div>
                 
                     <div class="form-group">
-                        <input type="number" class="form-control bg-light" placeholder="N° SUS">
+                        <input type="text" class="form-control bg-light" id="susCidRua" placeholder="N° SUS">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control bg-light" placeholder="Tempo na rua">
+                        <input type="text" class="form-control bg-light" id="tempoRua" placeholder="Tempo na rua">
                     </div>
                     <div class="form-group">
-                        <input type="number" class="form-control bg-light" placeholder="Alimenta ao dia">
+                        <input type="text" class="form-control bg-light" id="alimentacaoDia" placeholder="Alimenta ao dia">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control bg-light" placeholder="Origem alimentação">
+                        <input type="text" class="form-control bg-light" id="origemAlimentacao" placeholder="Origem alimentação">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control bg-light" placeholder="Higiene pessoal">
+                        <input type="text" class="form-control bg-light" id="higienePessoal" placeholder="Higiene pessoal">
                     </div>                
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="">
+                        <input class="form-check-input" id="temBeneficio" type="checkbox" value="">
                         <label class="form-check-label" for="defaultCheck1">Recebe benefício</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="">
+                        <input class="form-check-input" id="temRefFamiliar" type="checkbox" value="">
                         <label class="form-check-label" for="defaultCheck2">Possui referência familiar</label> 
                     </div>
-                    <button class="btn btn-info btn-block navCor" onclick="nextPage('cadCid', 'main')"><strong>Finalizar</strong></button> 
+                    <button id="btCadastrarCidRua" class="btn btn-info btn-block navCor"><strong>Finalizar</strong></button> 
                
             </div>
         </div>
@@ -100,29 +84,29 @@
                     </p>
                 </div>
 
-                <form>
+                
                         <div class="form-group">
-                          <input type="number" class="form-control bg-light" placeholder="Nº SUS">
+                          <input type="text" class="form-control bg-light" id="numSusInd" placeholder="Nº SUS">
                         </div>
                         <div class="form-group">
-                          <input type="text" class="form-control bg-light" placeholder="Parentesco">
+                          <input type="text" class="form-control bg-light" id="parentescoInd" placeholder="Parentesco">
                         </div>
                         <div class="form-group">
-                          <input type="text" class="form-control bg-light" placeholder="Escolaridade">
+                          <input type="text" class="form-control bg-light" id="escolaridadeInd" placeholder="Escolaridade">
                         </div>
                         <div class="form-group">
-                          <input type="text" class="form-control bg-light" placeholder="Gênero">
+                          <input type="text" class="form-control bg-light" id="generoInd" placeholder="Gênero">
                         </div>
                         <div class="form-group">
-                          <input type="text" class="form-control bg-light" placeholder="Deficiência">
+                          <input type="text" class="form-control bg-light" id="temDeficienciaInd" placeholder="Deficiência">
                         </div>
                         <div class="form-group">
-                          <input type="text" class="form-control bg-light" placeholder="Criança fica com...">
+                          <input type="text" class="form-control bg-light" id="ficaComQuemInd" placeholder="Criança fica com...">
                         </div>
                       <div>
                           <div class="row" style="padding-left: 13px; padding-right: 13px;">
                           <div class="form-check col">
-                            <input class="form-check-input" type="checkbox" value="">
+                            <input class="form-check-input" id="temPlanoDeSaudeInd" type="checkbox" value="">
                             <label class="form-check-label" for="defaultCheck1">
                             Plano de saúde
                             </label>
@@ -130,7 +114,7 @@
                         </div>
                         <div class="row" style="padding-left: 13px; padding-right: 13px;">
                           <div class="form-check col">
-                            <input class="form-check-input" type="checkbox" value="">
+                            <input class="form-check-input" id="seMudouInd" type="checkbox" value="">
                             <label class="form-check-label" for="defaultCheck2">
                               Mudança
                             </label>
@@ -138,19 +122,20 @@
                       </div>
                       <div class="row" style="padding-left: 13px; padding-right: 13px;">
                           <div class="form-check col">
-                            <input class="form-check-input" type="checkbox" value="">
-                            <label class="form-check-label" for="defaultCheck3">
+                            <input class="form-check-input" id="estaVivoInd" type="checkbox" value="">
+                            <label class="form-check-label"  for="defaultCheck3">
                               Óbito
                             </label>
                           </div>
                         </div>
               
                         <div class="row pdBt">
-                          <a class="btn btn-info navCor col" onclick="nextPage('cadInd', 'cadMoradia')"><strong>Anterior</strong></a> </br>
-                          <a class="btn btn-info navCor col mgBt" onclick="nextPage('cadInd', 'cadSaude')"><strong>Próximo</strong></a> </br>
+                          
+                          <a class="btn btn-info navCor col mgBt" onclick="nextPage('cadInd', 'cadMoradia')"><strong>Anterior</strong></a> </br>
+                          <button id="btCadInd" class="btn btn-info navCor col"><strong>Proximo</strong></button> </br>
                         </div>
                       </div>       
-                  </form>
+                 
             </div>
         </div>
 
@@ -174,35 +159,35 @@
                         Etapa 1 de 4
                     </p>
                 </div>
-                <form>
+                
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
-                            <input type="number" class="form-control bg-light" placeholder="CEP"> </br>
-                            <input type="number" class="form-control bg-light mgBt" placeholder="Número">
+                            <input type="number" class="form-control bg-light" id="cepCadMoradia" placeholder="CEP"> </br>
+                            <input type="number" class="form-control bg-light mgBt" id="numeroCadMoradia" placeholder="Número">
                         </div>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control bg-light" placeholder="Rua">
+                        <input type="text" class="form-control bg-light" id="ruaCadMoradia" placeholder="Rua">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control bg-light" placeholder="Abastecimento d'água">
+                        <input type="text" class="form-control bg-light" id="temAbastAguaMoradia" placeholder="Abastecimento d'água">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control bg-light" placeholder="Animais">
+                        <input type="text" class="form-control bg-light" id="temAnimalMoradia" placeholder="Animais">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control bg-light" placeholder="Esgoto">
+                        <input type="text" class="form-control bg-light" id="temEsgotoMoradia" placeholder="Esgoto">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control bg-light" placeholder="Lixo">
+                        <input type="text" class="form-control bg-light" id="temLixoMoradia" placeholder="Lixo">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control bg-light" placeholder="N° SUS Responsável">
+                        <input type="text" class="form-control bg-light" id="numSusRespMoradia" placeholder="N° SUS Responsável">
                     </div>
                     <div>
-                        <a class="btn btn-info btn-block navCor" onclick="nextPage('cadMoradia', 'cadInd')"><strong>Próximo</strong></button></a> </br>
+                        <button id="btCadMoradia" class="btn btn-info btn-block navCor" ><strong>Próximo</strong></button></br>
                     </div>
-                </form>     
+                     
             </div>
         </div>
 
@@ -226,69 +211,69 @@
                         Etapa 3 de 4
                     </p>
                 </div>
-                <form>
+                
                     <div class="form-group">
-                        <input type="number" class="form-control bg-light" placeholder="N°">
+                        <input type="text" class="form-control bg-light" id="numSusSaude" placeholder="N°">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control bg-light" placeholder="Doença cardíaca">
+                        <input type="text" class="form-control bg-light" id="dCardiacaSaude" placeholder="Doença cardíaca">
                     </div>
                     <div class="form-group">
-                        <input type="number" class="form-control bg-light" placeholder="Peso">
+                        <input type="number" class="form-control bg-light" id="pesoSaude" placeholder="Peso">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control bg-light" placeholder="Doença respiratória">
+                        <input type="text" class="form-control bg-light" id="dRespSaude" placeholder="Doença respiratória">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control bg-light" placeholder="Problema nos rins">
+                        <input type="text" class="form-control bg-light" id="dRinsSaude" placeholder="Problema nos rins">
                     </div>
 
                     <div class="row" style="padding-left: 5%; padding-right: 13px;">
                         <div class="form-check col">
-                            <input class="form-check-input" type="checkbox" value="">
+                            <input class="form-check-input" id="fumanteSaude" type="checkbox" value="">
                             <label class="form-check-label" for="defaultCheck1">Fumante</label>
                         </div>
                         <div class="form-check col">
-                            <input class="form-check-input" type="checkbox" value="">
+                            <input class="form-check-input" id="seMudouSaude" type="checkbox" value="">
                             <label class="form-check-label" for="defaultCheck2">Mudança</label> 
                         </div>
                     </div>
                     <div class="row" style="padding-left: 5%; padding-right: 13px;">
                         <div class="form-check col">
-                            <input class="form-check-input" type="checkbox" value="">
+                            <input class="form-check-input" id="alcoolSaude" type="checkbox" value="">
                             <label class="form-check-label" for="defaultCheck1">Usa álcool</label>
                         </div>
                         <div class="form-check col">
-                            <input class="form-check-input" type="checkbox" value="">
+                            <input class="form-check-input" id="diabetesSaude" type="checkbox" value="">
                             <label class="form-check-label" for="defaultCheck2">Diabetes</label> 
                         </div>
                     </div>
                     <div class="row" style="padding-left: 5%; padding-right: 13px;">
                         <div class="form-check col">
-                            <input class="form-check-input" type="checkbox" value="">
+                            <input class="form-check-input" id="drogasSaude" type="checkbox" value="">
                             <label class="form-check-label" for="defaultCheck1">Drogas</label>
                         </div>
                         <div class="form-check col">
-                            <input class="form-check-input" type="checkbox" value="">
+                            <input class="form-check-input" id="avcDerrameSaude" type="checkbox" value="">
                             <label class="form-check-label" for="defaultCheck2">AVC/Derrame</label> 
                         </div>
                     </div>
                     <div class="row" style="padding-left: 5%; padding-right: 13px;">
                         <div class="form-check col">
-                            <input class="form-check-input" type="checkbox" value="">
+                            <input class="form-check-input" id="hipertensoSaude" type="checkbox" value="">
                             <label class="form-check-label" for="defaultCheck1">Hipertenso</label>
                         </div>
                         <div class="form-check col">
-                            <input class="form-check-input" type="checkbox" value="">
+                            <input class="form-check-input" id="cancerSaude" type="checkbox" value="">
                             <label class="form-check-label" for="defaultCheck2">Câncer</label> 
                         </div>
                     </div>
 
                     <div class="row pdBt">
                         <a class="btn btn-info navCor col" onclick="nextPage('cadSaude', 'cadInd')" ><strong>Anterior</strong></a> </br>
-                        <a class="btn btn-info navCor col mgBt" onclick="nextPage('cadSaude', 'cadCid')" ><strong>Próximo</strong></a> </br>
+                        <button class="btn btn-info navCor col mgBt" id="btCadSaude"><strong>Próximo</strong></button> </br>
                     </div>
-                </form>
+                
             </div>
         </div>
 
@@ -301,16 +286,16 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text icon"><img src="icons/iconUser.png" style="width: 36px;"></span>
                         </div>
-                        <input type="email" class="form-control" placeholder="Email" id="usr" name="email">
+                        <input class="form-control" placeholder="Email" id="emailPS">
                     </div>
                     
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text icon"><img src="icons/iconPass.png" style="width: 36px;"></span>
                             </div>
-                            <input type="password" class="form-control" placeholder="Senha" id="senha" name="senha">
+                            <input type="password" class="form-control" placeholder="Senha" id="senhaPS" name="senha">
                         </div>
-                        <button class="btn btn-block" id="buttonPadrao" onclick="nextPage('login', 'main')"><strong>Entrar</strong></button></br>
+                        <button class="btn btn-block" id="btLogarPS"><strong>Entrar</strong></button></br>
                    
                     <a onclick="nextPage('login', 'recSenha')" class="link" href="#recSenha">Esqueci a senha</a>
                 
@@ -329,15 +314,15 @@
             <img class="imgLogo" src="icons/logo.png">
                 
             <div class="painel"> 
-                <div class="itemPainel" onclick="nextPage('main', 'map')">
+                <div class="itemPainel" id="painelMapa">
                     <img class="imgPainel" src="icons/iconMaps.png">
                     <figcaption>Mapa</figcaption>
                 </div>
-                <div class="itemPainel" onclick="nextPage('main', 'cadMoradia')"> 
+                <div class="itemPainel" id="painelVisita"> 
                     <img class="imgPainel" src="icons/iconHouse.png">
                     <figcaption>Visita</figcaption>                    
                 </div>
-                <div class="itemPainel" onclick="nextPage('main', 'notif')">
+                <div class="itemPainel" id="painelNot">
                     <img class="imgPainel" src="icons/iconMega.png">
                     <figcaption>Notificações</figcaption>
                 </div>
@@ -483,14 +468,14 @@
                                                 <div>
                                                     <div class="row justify-content-center" style="margin-left: 00px;margin-right: 0px; padding-right: 10px;">
                                                         <div class="col" style="padding-left: 0px;padding-right: 0px;">
-                                                            <input type="text" class="form-control" placeholder="CEP" style="padding-left: 0px;padding-right: 0px;" id="recipient-name">
+                                                            <input type="text" class="form-control" placeholder="CEP" style="padding-left: 0px;padding-right: 0px;" id="mapaCEP">
                                                         </div>
                                                         <div class="col" style="padding-left: 5px;padding-right: 0px;">
-                                                                <input type="text" class="form-control" placeholder="Numero" style="padding-left: 5px;padding-right: 0px;padding-top: 0px;padding-bottom: 0px;" id="recipient-name">
+                                                                <input type="text" class="form-control" placeholder="Numero" style="padding-left: 5px;padding-right: 0px;padding-top: 0px;padding-bottom: 0px;" id="mapaNumero">
                                                         </div>
                                                         <div class="w-100"></div>
                                                         <div class="col" style="padding-left: 0px;padding-right: 0px;padding-top: 5px;">
-                                                            <input type="text" class="form-control" placeholder="Rua" style="padding-left: 0px;padding-right: 0px;padding-top: 0px;padding-bottom: 0px;" id="recipient-name">
+                                                            <input type="text" class="form-control" placeholder="Rua" style="padding-left: 0px;padding-right: 0px;padding-top: 0px;padding-bottom: 0px;" id="mapaRua">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -504,21 +489,21 @@
                                     <div class="form-group">
                                         <label for="message-text" class="control-label">Intensidade</label>
                                         <br>
-                                        <div class="btn-group btn-group-toggle" style="margin-right: 15px;" data-toggle="buttons">
+                                        <div id="botoesInt" class="btn-group" style="margin-right: 15px;" data-toggle="buttons">
                                             
-                                            <label class="btn btn-secondary" style="padding-left: 25px;padding-right: 25px;margin-right: 15px;">
-                                                <input type="radio" name="options" id="option1" autocomplete="off" checked> Baixa
+                                            <label id="mpBaixaInt" class="btn btn-secondary" style="padding-left: 25px;padding-right: 25px;margin-right: 15px;">
+                                                <input type="radio" name="options"  autocomplete="off" checked> Baixa
                                             </label>
-                                            <label class="btn btn-secondary" style="margin-right: 15px;">
-                                                <input type="radio" name="options" id="option2" autocomplete="off"> Moderada
+                                            <label id="mpMediaInt class="btn btn-secondary" style="margin-right: 15px;">
+                                                <input type="radio" name="options" " autocomplete="off"> Moderada
                                             </label>
-                                            <label class="btn btn-secondary" style="padding-left: 25px;padding-right: 25px;">
-                                                <input type="radio" name="options" id="option3" autocomplete="off"> Alta
+                                            <label id="mpAltaInt" class="btn btn-secondary" style="padding-left: 25px;padding-right: 25px;">
+                                                <input type="radio" name="options"  autocomplete="off"> Alta
                                             </label>
                                             </div>
                                     </div>
-                                    <textarea class="form-control" placeholder="Observações" id="message-text"></textarea>
-                                    <button type="submit" class="btn btn-info" style="margin-left: 15px;margin-right: 15px;margin-bottom: 15px;">Salvar</button>   
+                                    <textarea class="form-control" placeholder="Observações" id="msgMapa"></textarea>
+                                    <button class="btn btn-info" id="btCadastrarNotMapa" style="margin-left: 15px;margin-right: 15px;margin-bottom: 15px;">Salvar</button>   
                                 
                             </div>      
                         </div>
@@ -526,7 +511,6 @@
                 </div>
             </div>            
         </div>
-
         <div id="notif" class="notificacoesPg hidden">
             <div class="notificacoesPg">
                 <nav class="navbar navbar-expand-md navCor navbar-dark link">
@@ -557,7 +541,7 @@
                             <p style="float: right; padding-top: 5px;">Visualizar dados do usuário</p>
                             <br>
                             <img src="icons/user.png">
-                            <h7>Usuário</h7>
+                            <h7 id="nomeUserNotif">Usuário</h7>
                             <div class="form-group">
                                 <textarea class="form-control" id="mensagem" rows="3" placeholder="Mensagem"></textarea>
                             </div>
@@ -621,7 +605,6 @@
                 </div>
             </div>
         </div>
-
         <div id="newNotif" class="hidden">
             <nav class="navbar navbar-expand-md navCor navbar-dark link">
                 <div id="mySidenav" class="sidenav">
@@ -667,6 +650,8 @@
                 
                 <a onclick="nextPage('recSenha', 'login')" class="link" href="#login">Voltar ao login</a>
             </div>
+       
         </div>
+        <script src="script.js"></script>
     </body>
 </html>

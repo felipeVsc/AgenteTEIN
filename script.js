@@ -30,54 +30,205 @@ var firebaseConfig = {
   appId: "1:166401056761:web:fd693f486b88eb13eda728"
 };
 
-firebase.initializeApp({
-  apiKey: "AIzaSyB2_RDWk68PRh8Y58MJ0CbN8BkuPNTh1JU",
-  authDomain: "agentetein.firebaseapp.com",
-  projectId: "agentetein"
-});
-var db = firebase.firestore();
+firebase.initializeApp(firebaseConfig);
+var firestore = firebase.firestore();
 
-var btCadastrar = document.getElementById("btCadastrar");
+// LOGIN PROF SAUDE
 
-btCadastrar.addEventListener("click", function(){
-
-  if(document.getElementById("senhaUsuario").value == document.getElementById("senhaUsuarioRepetir").value){
-    docRef.set({
-      nomeUsuario: document.getElementById("nomeUsuario").value,
-      emailUsuario: document.getElementById("emailUsuario").value,
-      senhaUsuario: document.getElementById("senhaUsuario").value,
-      numSusUsuario: document.getElementById("numSusUsuario").value,
-      cepUsuario: document.getElementById("cepUsuario").value,
-      numeroUsuario: document.getElementById("numeroUsuario").value,
-      enderecoUsuario: document.getElementById("enderecoUsuario").value
-      
-  
-    })
-  }
-  else{
-    alert("erro");
-  }
-});
-
-// login user
-var btLogar = document.getElementById("btLogar");
-btLogar.addEventListener("click", function(){
-  db.collection("usuarios").where("email", "==", emailUsuario)
-  .get()
-  .then(function(querySnapshot) {
-      querySnapshot.forEach(function(doc) {
+  console.log("a");
+  var btLogarPS = document.getElementById("btLogarPS");
+  btLogarPS.addEventListener("click", function(){
+    document.getElementById("emailPS") == "";
+    
+    var emailPS = document.getElementById("emailPS").value;
+    var senhaPS = document.getElementById("senhaPS").value;
+    var docRefLogin = firestore.collection("profSaude").doc(emailPS);
+    console.log("testado");
+    docRefLogin.get().then(function(doc) {
+        if (doc && doc.exists){
           const myData = doc.data();
-          
-          if(myData.senha==document.getElementById("senhaLogin").value){
-            //nextPage(idActualDiv,idNextDiv)
+          if (myData.senhaPS == senhaPS){
+            console.log(myData.emailPS);
+            document.getElementById("login").classList.add('hidden');
+            document.getElementById("main").classList.remove('hidden');
           }
-      });
-  })
-  .catch(function(error) {
-      console.log("Nao existe email", error);
+          else{
+            console.log("senha errada");
+          }
+        }
+      }).catch(function (error){
+        console.log("error");
+      })
+    });
+
+    
+  
+document.getElementById("painelVisita").addEventListener("click", function(){
+  document.getElementById("main").classList.add('hidden');
+  document.getElementById("cadMoradia").classList.remove('hidden');
+  var btCadMoradia = document.getElementById("btCadMoradia");
+  console.log("b");
+  btCadMoradia.addEventListener("click", function(){
+    console.log("clicado");
+    
+    document.getElementById("numSusRespMoradia").value == "";
+    var numSusRespMoradia = document.getElementById("numSusRespMoradia").value;
+    var docRef = firestore.collection("cadastrosPS").doc(numSusRespMoradia); 
+    
+    
+      docRef.set({
+        cepCadMoradia: document.getElementById("cepCadMoradia").value,
+        numeroCadMoradia: document.getElementById("numeroCadMoradia").value,
+        ruaCadMoradia: document.getElementById("ruaCadMoradia").value,
+        numSusRespMoradia: document.getElementById("numSusRespMoradia").value,
+        temAbastAguaMoradia: document.getElementById("temAbastAguaMoradia").value,
+        temAnimalMoradia: document.getElementById("temAnimalMoradia").value,
+        temEsgotoMoradia: document.getElementById("temEsgotoMoradia").value,
+        temLixoMoradia: document.getElementById("temLixoMoradia").value
+      })
+      document.getElementById("cadMoradia").classList.add('hidden');
+      document.getElementById("cadInd").classList.remove('hidden');
+  });
+  var btCadInd = document.getElementById("btCadInd");
+  console.log("c");
+  btCadInd.addEventListener("click", function(){
+    console.log("clicado");
+    
+    document.getElementById("numSusInd").value == "";
+    var numSusInd = document.getElementById("numSusInd").value;
+    // talvez de erro aqui com o numSusRespMoradia
+    var ref2 = firestore.collection("cadastrosPS").doc(numSusRespMoradia.value).collection("individuos").doc(numSusInd); 
+      ref2.set({
+        numSusInd: document.getElementById("numSusInd").value,
+        parentescoInd: document.getElementById("parentescoInd").value,
+        escolaridadeInd: document.getElementById("escolaridadeInd").value,
+        generoInd: document.getElementById("generoInd").value,
+        temDeficienciaInd: document.getElementById("temDeficienciaInd").value,
+        ficaComQuemInd: document.getElementById("ficaComQuemInd").value,
+        temPlanoDeSaudeInd: document.getElementById("temPlanoDeSaudeInd").checked,
+        seMudouInd: document.getElementById("seMudouInd").checked,
+        estaVivoInd: document.getElementById("estaVivoInd").checked
+      })
+
+
+      document.getElementById("cadInd").classList.add('hidden');
+      document.getElementById("cadSaude").classList.remove('hidden');
+    
   });
 
+  var btCadSaude = document.getElementById("btCadSaude");
+  btCadSaude.addEventListener("click", function(){
+    console.log("clicado");
+    
+    document.getElementById("numSusSaude").value == "";
+    var numSusInd = document.getElementById("numSusSaude").value;
+    // talvez de erro aqui com o numSusRespMoradia
+    var ref2 = firestore.collection("cadastrosPS").doc(numSusRespMoradia.value).collection("individuos").doc(numSusInd).collection("saude").doc(document.getElementById("numSusSaude").value); 
+      ref2.set({
+        numSusSaude: document.getElementById("numSusSaude").value,
+        dCardiacaSaude: document.getElementById("dCardiacaSaude").value,
+        pesoSaude: document.getElementById("pesoSaude").value,
+        dRespSaude: document.getElementById("dRespSaude").value,
+        dRinsSaude: document.getElementById("dRinsSaude").value,
+        fumanteSaude: document.getElementById("fumanteSaude").checked,
+        seMudouSaude: document.getElementById("seMudouSaude").checked,
+        alcoolSaude: document.getElementById("alcoolSaude").checked,
+        diabetesSaude: document.getElementById("diabetesSaude").checked,
+        drogasSaude: document.getElementById("drogasSaude").checked,
+        avcDerrameSaude: document.getElementById("avcDerrameSaude").checked,
+        hipertensoSaude: document.getElementById("hipertensoSaude").checked,
+        cancerSaude: document.getElementById("cancerSaude").checked
+      })
+
+
+      document.getElementById("cadSaude").classList.add('hidden');
+      document.getElementById("cadCid").classList.remove('hidden');
+    
+  });
+
+  // cadcid
+
+  var btCadastrarCidRua = document.getElementById("btCadastrarCidRua");
+  btCadastrarCidRua.addEventListener("click", function(){
+    console.log("clicado");
+    document.getElementById("susCidRua").value == "";
+    var susCidRua = document.getElementById("susCidRua").value;
+    // talvez de erro aqui com o numSusRespMoradia
+    var docRef = firestore.collection("cidRua").doc(susCidRua); 
+      docRef.set({
+        numSusCRua: document.getElementById("susCidRua").value,
+        tempoRua: document.getElementById("tempoRua").value,
+        alimentacaoDia: document.getElementById("alimentacaoDia").value,
+        origemAlimentacao: document.getElementById("origemAlimentacao").value,
+        higienePessoal: document.getElementById("higienePessoal").value,
+        temBeneficio: document.getElementById("temBeneficio").checked,
+        temRefFamiliar: document.getElementById("temRefFamiliar").checked
+      })
+      document.getElementById("cadCid").classList.add('hidden');
+      document.getElementById("main").classList.remove('hidden');
+    
+  });
+})
+
+
+        
+
+
+
+document.getElementById("painelVisita").addEventListener("click", function(){
+  $('#botoesInt button').click(function() {
+    $(this).addClass('active').siblings().removeClass('active');
+
+    // TODO: insert whatever you want to do with $(this) here
 });
+  var btCadastrarNotMapa = document.getElementById("btCadastrarNotMapa");
+  btCadastrarNotMapa.addEventListener("click", function(){
+    console.log("clicado");
+    
+    
+    // talvez de erro aqui com o numSusRespMoradia
+    var docRef = firestore.collection("notificacoesMapa"); 
+    var valorIntensidade;
+    if (document.getElementById("mpBaixaInt").classList.contains("active")==true){
+      valorIntensidade=="baixo";
+    }
+    else if(document.getElementById("mpMediaInt").classList.contains("active")==true){
+      valorIntensidade=="moderado";
+    }
+    else{
+      valorIntensidade=="alto";
+    }
+      docRef.set({
+        textoModel: document.getElementById("textoModel").value,
+        mapaCEP: document.getElementById("mapaCEP").value,
+        mapaNumero: document.getElementById("mapaNumero").value,
+        mapaRua: document.getElementById("mapaRua").value,
+        msgMapa: document.getElementById("msgMapa").value,
+        mapaIntensidade: valorIntensidade,
+        isVerified: false        
+      })
+      
+    
+  });
+})
+  
+
+document.getElementById("painelNot").addEventListener("click", function(){
+  document.getElementById("main").classList.add('hidden');
+  document.getElementById("notif").classList.remove('hidden');
+  console.log("teste")
+  var notDocRef = firestore.collection("users");
+  console.log("testado");
+  notDocRef.get().then(function(doc) {
+    doc.forEach(function(doc) {
+      // doc.data() is never undefined for query doc snapshots
+      console.log(doc.data().emailUsuario);
+  });
+
+    }).catch(function (error){
+      console.log("error");
+    })
+})
 
 // ALERTA USUARIO
 
@@ -92,94 +243,4 @@ btEnviarAlerta.addEventListener("click", function(){
 });
 
 
-// CADIND FALTA COLOCAR COMO SUBCOLECAO
-
-var btCadastrarInd = document.getElementById("btCadastrarInd");
-btCadastrarInd.addEventListener("click", function(){
-
-  
-    docRef.set({
-      numSusInd: document.getElementById("numSusInd").value,
-      parentescoInd: document.getElementById("parentescoInd").value,
-      escolaridadeInd: document.getElementById("escolaridadeInd").value,
-      generoInd: document.getElementById("generoInd").value,
-      temDeficienciaInd: document.getElementById("temDeficienciaInd").value,
-      ficaComQuemInd: document.getElementById("ficaComQuemInd").value,
-      temPlanoDeSaudeInd: document.getElementById("temPlanoDeSaudeInd").value,
-      seMudouInd: document.getElementById("seMudouInd").value,
-      estaVivoInd: document.getElementById("estaVivoInd").value
-      
-  
-    })
-   
-});
-
-// CADMORD
-var btCadastrarMoradia = document.getElementById("btCadastrarMoradia");
-btCadastrarMoradia.addEventListener("click", function(){
-
-  
-    docRef.set({
-      numSusResp: document.getElementById("numSusResp").value,
-      cepMoradia: document.getElementById("cepMoradia").value,
-      ruaMoradia: document.getElementById("ruaMoradia").value,
-      numeroMoradia: document.getElementById("numeroMoradia").value,
-      temAguaMoradia: document.getElementById("temAguaMoradia").value,
-      temAnimalMoradia: document.getElementById("temAnimalMoradia").value,
-      temEsgotoMoradia: document.getElementById("temEsgotoMoradia").value,
-      temColetaLixoMoradia: document.getElementById("temColetaLixoMoradia").value
-      
-  
-    })
-   
-});
-// CADSAUDE 
-
-// NOTIFICACAO
-
-// NOTMAPA
-var btNotfMapa = document.getElementById("btNotfMapa");
-
-var nomePusar;
-function setarNome(idNome){
-  var nomePusar = document.getElementById(idNome);
-
-}
-
-btNotfMapa.addEventListener("click", function(){
-
-  // cep num rua intensidade obs
-    docRef.set({
-      numSusCRua: document.getElementById("numSusCRua").value,
-      tempoRua: document.getElementById("tempoRua").value,
-      alimentacaoDia: document.getElementById("alimentacaoDia").value,
-      origemAlimentacao: document.getElementById("origemAlimentacao").value,
-      higienePessoal: document.getElementById("higienePessoal").value,
-      temBeneficio: document.getElementById("temBeneficio").value,
-      temRefFamiliar: document.getElementById("temRefFamiliar").value
-      
-  
-    })
-   
-});
-
-
-// CIDADAO DE RUA
-
-var btCadastrarCidRua = document.getElementById("btCadastrarCidRua");
-btCadastrarCidRua.addEventListener("click", function(){
-
-  
-    docRef.set({
-      numSusCRua: document.getElementById("numSusCRua").value,
-      tempoRua: document.getElementById("tempoRua").value,
-      alimentacaoDia: document.getElementById("alimentacaoDia").value,
-      origemAlimentacao: document.getElementById("origemAlimentacao").value,
-      higienePessoal: document.getElementById("higienePessoal").value,
-      temBeneficio: document.getElementById("temBeneficio").value,
-      temRefFamiliar: document.getElementById("temRefFamiliar").value
-      
-  
-    })
-   
-});
+// pegar notificacoes
