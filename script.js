@@ -227,7 +227,7 @@ document.getElementById("painelMapa").addEventListener("click", function(){
     $(this).addClass('active').siblings().removeClass('active');
 
     // TODO: insert whatever you want to do with $(this) here
-});
+  });
   var btCadastrarNotMapa = document.getElementById("btCadastrarNotMapa");
   btCadastrarNotMapa.addEventListener("click", function(){
     
