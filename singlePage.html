@@ -149,7 +149,7 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                     <span class="navbar-toggler-icon" style="cursor:pointer" onclick="openNav()"></span>
                 </button>
-                <a class="navbar-brand navbarTextLeft" href="">Cadastro Moradia</a>
+                <a class="navbar-brand navbarTextLeft" id="cadMoradiaVoltarMain">Cadastro Moradia</a>
             </nav>
             <br>
             <div class="container">
@@ -286,7 +286,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text icon"><img src="icons/iconUser.png" style="width: 36px;"></span>
                         </div>
-                        <input class="form-control" placeholder="Email" id="emailPS">
+                        <input class="form-control" placeholder="email teste@teste.com senha 12345" id="emailPS">
                     </div>
                     
                         <div class="input-group mb-3">
@@ -561,9 +561,9 @@
                             <p style="float: right;">Visualizar dados do usuário</p>
                             <br>
                             <img src="icons/user.png">
-                            <h7>Usuário</h7>
+                            <h7 id="nomeUserNotif2">Usuário</h7>
                             <div class="form-group">
-                                <textarea class="form-control" id="mensagem" rows="3" placeholder="Mensagem"></textarea>
+                                <textarea class="form-control" id="mensagem2" rows="3" placeholder="Mensagem"></textarea>
                             </div>
                             <div class="row pdBt">
                                 <button class="btn btn-danger col">

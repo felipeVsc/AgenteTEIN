@@ -269,13 +269,22 @@ document.getElementById("painelNot").addEventListener("click", function(){
   document.getElementById("main").classList.add('hidden');
   document.getElementById("notif").classList.remove('hidden');
   
-  var notDocRef = firestore.collection("users");
+  var notDocRef = firestore.collection("notificacoes");
   
   notDocRef.get().then(function(doc) {
+    var teste = [];
+    
+    
     doc.forEach(function(doc) {
       // doc.data() is never undefined for query doc snapshots
-      console.log(doc.data().emailUsuario);
+      teste.push(doc.data().msgUsrNtf);
+      teste.push(doc.data().emailUsuario);
+      
   });
+  document.getElementById("nomeUserNotif").innerHTML==teste[1];
+  document.getElementById("mensagem").innerHTML==teste[0];
+  document.getElementById("nomeUserNotif2").innerHTML==teste[3];
+  document.getElementById("mensagem2").innerHTML==teste[2];
 
     }).catch(function (error){
       console.log("error");
