@@ -281,10 +281,10 @@ document.getElementById("painelNot").addEventListener("click", function(){
       teste.push(doc.data().emailUsuario);
       
   });
-  document.getElementById("nomeUserNotif").innerHTML==teste[1];
-  document.getElementById("mensagem").innerHTML==teste[0];
-  document.getElementById("nomeUserNotif2").innerHTML==teste[3];
-  document.getElementById("mensagem2").innerHTML==teste[2];
+  document.getElementById("nomeUserNotif").innerHTML=teste[1];
+  document.getElementById("mensagem").innerHTML=teste[0];
+  document.getElementById("nomeUserNotif2").innerHTML=teste[3];
+  document.getElementById("mensagem2").innerHTML=teste[2];
 
     }).catch(function (error){
       console.log("error");
