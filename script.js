@@ -35,7 +35,7 @@ var firestore = firebase.firestore();
 
 // LOGIN PROF SAUDE
 
-  console.log("a");
+ 
   var btLogarPS = document.getElementById("btLogarPS");
   btLogarPS.addEventListener("click", function(){
     document.getElementById("emailPS") == "";
@@ -43,7 +43,7 @@ var firestore = firebase.firestore();
     var emailPS = document.getElementById("emailPS").value;
     var senhaPS = document.getElementById("senhaPS").value;
     var docRefLogin = firestore.collection("profSaude").doc(emailPS);
-    console.log("testado");
+    
     docRefLogin.get().then(function(doc) {
         if (doc && doc.exists){
           const myData = doc.data();
@@ -67,9 +67,9 @@ document.getElementById("painelVisita").addEventListener("click", function(){
   document.getElementById("main").classList.add('hidden');
   document.getElementById("cadMoradia").classList.remove('hidden');
   var btCadMoradia = document.getElementById("btCadMoradia");
-  console.log("b");
+  
   btCadMoradia.addEventListener("click", function(){
-    console.log("clicado");
+    
     
     document.getElementById("numSusRespMoradia").value == "";
     var numSusRespMoradia = document.getElementById("numSusRespMoradia").value;
@@ -86,13 +86,24 @@ document.getElementById("painelVisita").addEventListener("click", function(){
         temEsgotoMoradia: document.getElementById("temEsgotoMoradia").value,
         temLixoMoradia: document.getElementById("temLixoMoradia").value
       })
+      
+
       document.getElementById("cadMoradia").classList.add('hidden');
       document.getElementById("cadInd").classList.remove('hidden');
+      document.getElementById("cepCadMoradia").value="";
+      document.getElementById("numeroCadMoradia").value="";
+      document.getElementById("ruaCadMoradia").value="";
+      document.getElementById("numSusRespMoradia").value="";
+      document.getElementById("temAbastAguaMoradia").value="";
+      document.getElementById("temAnimalMoradia").value="";
+      document.getElementById("temEsgotoMoradia").value="";
+      document.getElementById("temLixoMoradia").value="";
+
   });
   var btCadInd = document.getElementById("btCadInd");
-  console.log("c");
+  
   btCadInd.addEventListener("click", function(){
-    console.log("clicado");
+    
     
     document.getElementById("numSusInd").value == "";
     var numSusInd = document.getElementById("numSusInd").value;
@@ -110,6 +121,16 @@ document.getElementById("painelVisita").addEventListener("click", function(){
         estaVivoInd: document.getElementById("estaVivoInd").checked
       })
 
+      document.getElementById("numSusInd").value="";
+      document.getElementById("parentescoInd").value="";
+      document.getElementById("escolaridadeInd").value="";
+      document.getElementById("generoInd").value="";
+      document.getElementById("temDeficienciaInd").value="";
+      document.getElementById("ficaComQuemInd").value="";
+      document.getElementById("seMudouInd").value="";
+      document.getElementById("temPlanoDeSaudeInd").value="";
+      document.getElementById("estaVivoInd").value="";
+
 
       document.getElementById("cadInd").classList.add('hidden');
       document.getElementById("cadSaude").classList.remove('hidden');
@@ -118,7 +139,7 @@ document.getElementById("painelVisita").addEventListener("click", function(){
 
   var btCadSaude = document.getElementById("btCadSaude");
   btCadSaude.addEventListener("click", function(){
-    console.log("clicado");
+    
     
     document.getElementById("numSusSaude").value == "";
     var numSusInd = document.getElementById("numSusSaude").value;
@@ -139,7 +160,19 @@ document.getElementById("painelVisita").addEventListener("click", function(){
         hipertensoSaude: document.getElementById("hipertensoSaude").checked,
         cancerSaude: document.getElementById("cancerSaude").checked
       })
-
+      document.getElementById("numSusSaude").value="";
+      document.getElementById("dCardiacaSaude").value="";
+      document.getElementById("pesoSaude").value="";
+      document.getElementById("dRespSaude").value="";
+      document.getElementById("dRinsSaude").value="";
+      document.getElementById("fumanteSaude").value="";
+      document.getElementById("seMudouSaude").value="";
+      document.getElementById("alcoolSaude").value="";
+      document.getElementById("diabetesSaude").value="";
+      document.getElementById("drogasSaude").value="";
+      document.getElementById("avcDerrameSaude").value="";
+      document.getElementById("hipertensoSaude").value="";
+      document.getElementById("cancerSaude").value="";
 
       document.getElementById("cadSaude").classList.add('hidden');
       document.getElementById("cadCid").classList.remove('hidden');
@@ -150,7 +183,7 @@ document.getElementById("painelVisita").addEventListener("click", function(){
 
   var btCadastrarCidRua = document.getElementById("btCadastrarCidRua");
   btCadastrarCidRua.addEventListener("click", function(){
-    console.log("clicado");
+    
     document.getElementById("susCidRua").value == "";
     var susCidRua = document.getElementById("susCidRua").value;
     // talvez de erro aqui com o numSusRespMoradia
@@ -164,6 +197,15 @@ document.getElementById("painelVisita").addEventListener("click", function(){
         temBeneficio: document.getElementById("temBeneficio").checked,
         temRefFamiliar: document.getElementById("temRefFamiliar").checked
       })
+
+      document.getElementById("susCidRua").value="";
+      document.getElementById("tempoRua").value="";
+      document.getElementById("alimentacaoDia").value="";
+      document.getElementById("origemAlimentacao").value="";
+      document.getElementById("higienePessoal").value="";
+      document.getElementById("temBeneficio").value="";
+      document.getElementById("temRefFamiliar").value="";
+
       document.getElementById("cadCid").classList.add('hidden');
       document.getElementById("main").classList.remove('hidden');
     
@@ -171,7 +213,10 @@ document.getElementById("painelVisita").addEventListener("click", function(){
 })
 
 
-        
+document.getElementById("cadMoradiaVoltarMain").addEventListener("click", function(){
+  document.getElementById("cadMoradia").classList.add('hidden');
+  document.getElementById("main").classList.remove('hidden');
+});        
 
 
 
@@ -185,7 +230,7 @@ document.getElementById("painelMapa").addEventListener("click", function(){
   });
   var btCadastrarNotMapa = document.getElementById("btCadastrarNotMapa");
   btCadastrarNotMapa.addEventListener("click", function(){
-    console.log("clicado");
+    
     
     
     // talvez de erro aqui com o numSusRespMoradia
@@ -210,7 +255,12 @@ document.getElementById("painelMapa").addEventListener("click", function(){
         isVerified: false        
       })
       
-    
+      document.getElementById("textoModel").value="";
+      document.getElementById("mapaCEP").value="";
+      document.getElementById("mapaNumero").value="";
+      document.getElementById("mapaRua").value="";
+      document.getElementById("msgMapa").value="";
+      
   });
 })
   
@@ -218,14 +268,23 @@ document.getElementById("painelMapa").addEventListener("click", function(){
 document.getElementById("painelNot").addEventListener("click", function(){
   document.getElementById("main").classList.add('hidden');
   document.getElementById("notif").classList.remove('hidden');
-  console.log("teste")
-  var notDocRef = firestore.collection("users");
-  console.log("testado");
+  
+  var notDocRef = firestore.collection("notificacoes");
+  
   notDocRef.get().then(function(doc) {
+    var teste = [];
+    
+    
     doc.forEach(function(doc) {
       // doc.data() is never undefined for query doc snapshots
-      console.log(doc.data().emailUsuario);
+      teste.push(doc.data().msgUsrNtf);
+      teste.push(doc.data().emailUsuario);
+      
   });
+  document.getElementById("nomeUserNotif").innerHTML=teste[1];
+  document.getElementById("mensagem").innerHTML=teste[0];
+  document.getElementById("nomeUserNotif2").innerHTML=teste[3];
+  document.getElementById("mensagem2").innerHTML=teste[2];
 
     }).catch(function (error){
       console.log("error");
