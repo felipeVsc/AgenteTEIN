@@ -175,12 +175,14 @@ document.getElementById("painelVisita").addEventListener("click", function(){
 
 
 
-document.getElementById("painelVisita").addEventListener("click", function(){
+document.getElementById("painelMapa").addEventListener("click", function(){
+  document.getElementById("main").classList.add('hidden');
+  document.getElementById("map").classList.remove('hidden');
   $('#botoesInt button').click(function() {
     $(this).addClass('active').siblings().removeClass('active');
 
     // TODO: insert whatever you want to do with $(this) here
-});
+  });
   var btCadastrarNotMapa = document.getElementById("btCadastrarNotMapa");
   btCadastrarNotMapa.addEventListener("click", function(){
     console.log("clicado");
